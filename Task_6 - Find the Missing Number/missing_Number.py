@@ -1,4 +1,4 @@
-## i have Using Cyclic sort 
+## Because the values are in range of 1 to n so i have used cyclic sort to solve this problem 
 def find_missing(arr, n):
     i = 0 
     while i < n-1:
