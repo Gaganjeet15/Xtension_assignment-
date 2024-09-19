@@ -1,4 +1,4 @@
-Write a function factorial(n) that returns the factorial of a non-negative integer n. Factorial of 0 is 1.
+# Write a function factorial(n) that returns the factorial of a non-negative integer n. Factorial of 0 is 1.
 
 
 Explanation:
