@@ -1,7 +1,3 @@
-Here’s a merged version of your two Markdown files:
-
----
-
 # Xtension Assignment
 
 This repository contains the solutions for the Xtension Assignment.
