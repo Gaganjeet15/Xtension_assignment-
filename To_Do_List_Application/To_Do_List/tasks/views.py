@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Task
 from .forms import TaskForm
+from django.views.decorators.csrf import csrf_exempt
 
 def task_list(request):
     tasks = Task.objects.all().order_by('-created_at')
@@ -22,6 +23,12 @@ def add_task(request):
     else:
         form = TaskForm()
     return render(request, 'tasks/add_task.html', {'form': form})
+
+def delete_task(request, task_id):  # Accept `task_id` from the URL
+    task = get_object_or_404(Task, id=task_id)  # Use `task_id` from the URL
+    task.delete()
+    messages.success(request, f'Task "{task.name}" deleted successfully!')
+    return redirect('task_list')
 
 def complete_task(request, task_id):
     task = get_object_or_404(Task, id=task_id)
